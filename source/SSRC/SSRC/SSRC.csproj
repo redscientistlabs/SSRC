@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E304EB9C-74B4-4B46-9A56-3A5B40767A23}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SSRC</RootNamespace>
+    <AssemblyName>SSRC</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SSRC.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="UI\HelperMethods.cs" />
+    <Compile Include="UI\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainLayout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainLayout.Designer.cs">
+      <DependentUpon>MainLayout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wizard\WizardOrchestrator.cs" />
+    <Compile Include="Step Forms\WizardStepRunCorrupt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Step Forms\WizardStepRunCorrupt.Designer.cs">
+      <DependentUpon>WizardStepRunCorrupt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Step Forms\WizardStepTargetSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Step Forms\WizardStepTargetSetup.Designer.cs">
+      <DependentUpon>WizardStepTargetSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Step Forms\WizardStepEngineConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Step Forms\WizardStepEngineConfig.Designer.cs">
+      <DependentUpon>WizardStepEngineConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Step Forms\WizardStepSelectRom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Step Forms\WizardStepSelectRom.Designer.cs">
+      <DependentUpon>WizardStepSelectRom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Step Forms\WizardStepStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Step Forms\WizardStepStart.Designer.cs">
+      <DependentUpon>WizardStepStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardFooter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardFooter.Designer.cs">
+      <DependentUpon>WizardFooter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Wizard\WizardHeader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Wizard\WizardHeader.Designer.cs">
+      <DependentUpon>WizardHeader.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainLayout.resx">
+      <DependentUpon>MainLayout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Step Forms\WizardStepRunCorrupt.resx">
+      <DependentUpon>WizardStepRunCorrupt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Step Forms\WizardStepTargetSetup.resx">
+      <DependentUpon>WizardStepTargetSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Step Forms\WizardStepEngineConfig.resx">
+      <DependentUpon>WizardStepEngineConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Step Forms\WizardStepSelectRom.resx">
+      <DependentUpon>WizardStepSelectRom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Step Forms\WizardStepStart.resx">
+      <DependentUpon>WizardStepStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardFooter.resx">
+      <DependentUpon>WizardFooter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Wizard\WizardHeader.resx">
+      <DependentUpon>WizardHeader.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\140.png" />
+    <Content Include="SSRC.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
